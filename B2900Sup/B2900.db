@@ -1,0 +1,20 @@
+
+# Common IEEE-488.2 Commands
+
+record(stringin, "$(P)$(R)IDN")
+{
+    field(DESC, "SCPI identification string")
+    field(DTYP, "stream")
+    field(INP,  "@B2900.proto getIDN(39) $(PORT) $(A)")
+    field(PINI, "YES")
+}
+
+record(waveform, "$(P)$(R)IDNwf")
+{
+    field(DESC, "SCPI identification string")
+    field(DTYP, "stream")
+    field(INP,  "@B2900.proto getIDN(199) $(PORT) $(A)")
+    field(PINI, "YES")
+    field(FTVL, "CHAR")
+    field(NELM, "200")
+}

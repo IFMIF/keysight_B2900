@@ -1,0 +1,65 @@
+Terminator = CR LF;
+
+getIDN {
+    out "*IDN?";
+    in "%\$1[^\n]";
+    ExtraInput = Ignore;
+}
+
+# Generic
+
+cmd {
+    out "\$1";
+}
+
+setD {
+    out "\$1 %d";
+}
+
+getD {
+    out "\$1?";
+    in "%d";
+    ExtraInput = Ignore;
+}
+
+getWF {
+    out "\$2";
+    in "%\$1[^\r\n]";
+}
+
+# Status and display command
+
+# Trigger
+
+# Delay
+
+delay {
+    out "DLAY %(\$1ChannelEdge)d,%(\$1ChannelLink)d,%e";
+}
+
+setDoutput {
+    out "\$1 \$2,%d";
+}
+
+getDoutput {
+    out "\$1?\$2";
+    in "%d";
+    ExtraInput = Ignore;
+}
+
+setDchannel {
+    out "\$1 \$2,%d";
+}
+
+getDchannel {
+    out "\$1?\$2";
+    in "%d";
+    ExtraInput = Ignore;
+}
+
+getDelay
+{    
+    out "DLAY?\$2";
+    in "%(\$1ChannelLink_RBV)d,%f";
+    ExtraInput = Ignore;
+}
