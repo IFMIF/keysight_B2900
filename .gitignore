@@ -3,3 +3,4 @@ dbd/**
 **/bin/**
 lib/**
 **/O.*/**
+/target/

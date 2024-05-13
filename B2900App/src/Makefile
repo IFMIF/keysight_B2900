@@ -18,7 +18,8 @@ B2900_DBD += drvAsynSerialPort.dbd
 B2900_DBD += drvAsynIPPort.dbd
 
 # Link in the code from our support library
-B2900_LIBS += calc stream asyn
+B2900_LIBS += stream calc pcre seq pv sscan
+B2900_LIBS += asyn
 
 # DG645_registerRecordDeviceDriver.cpp derives from DG645.dbd
 B2900_SRCS += B2900_registerRecordDeviceDriver.cpp
