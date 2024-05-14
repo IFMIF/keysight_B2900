@@ -7,7 +7,7 @@
 
 cd "${TOP}"
 epicsEnvSet "STREAM_PROTOCOL_PATH" "$(TOP)/db"
-epicsEnvSet "IP" "172.16.8.235"
+epicsEnvSet "IP" "169.254.5.1"
 epicsEnvSet "IPport" "5025"
 
 # Macro prefix
@@ -16,7 +16,7 @@ epicsEnvSet "R" "B2900:"
 
 ## Register all support components
 dbLoadDatabase "dbd/B2900.dbd"
-DG645_registerRecordDeviceDriver pdbbase
+B2900_registerRecordDeviceDriver pdbbase
 
 drvAsynIPPortConfigure("L0","$(IP):$(IPport)",0,0,0) 
 

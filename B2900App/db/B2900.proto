@@ -1,4 +1,4 @@
-Terminator = CR LF;
+Terminator = LF;
 
 getIDN {
     out "*IDN?";
@@ -22,9 +22,25 @@ getD {
     ExtraInput = Ignore;
 }
 
+setF {
+    out "\$1 %f";
+}
+
+getF {
+    out "\$1?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+
 getWF {
     out "\$2";
     in "%\$1[^\r\n]";
+}
+
+getArray {
+    separator=",";
+    out "\$1?";
+    in "%E";
 }
 
 # Status and display command
@@ -63,3 +79,4 @@ getDelay
     in "%(\$1ChannelLink_RBV)d,%f";
     ExtraInput = Ignore;
 }
+

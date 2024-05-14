@@ -18,3 +18,93 @@ record(waveform, "$(P)$(R)IDNwf")
     field(FTVL, "CHAR")
     field(NELM, "200")
 }
+
+record(ai, "$(P)$(R)SOUR_VOLT_RANG_GET")
+{
+    field(DESC, "Source Voltage Range")
+    field(DTYP, "stream")
+    field(INP,  "@B2900.proto getF(:SOURCE:VOLT:RANG) $(PORT) $(A)")
+    field(PINI, "YES")
+}
+
+record(ao, "$(P)$(R)SOUR_VOLT_RANG_SET")
+{
+    field(DESC, "Set Source Voltage Range")
+    field(DTYP, "stream")
+    field(OUT,  "@B2900.proto setF(:SOURCE:VOLT:RANG) $(PORT) $(A)")
+}
+
+record(ai, "$(P)$(R)SOUR_VOLT_GET")
+{
+    field(DESC, "Source Voltage Range")
+    field(DTYP, "stream")
+    field(INP,  "@B2900.proto getF(:SOURCE:VOLT) $(PORT) $(A)")
+    field(SCAN, "1 second")
+    field(PINI, "YES")
+}
+
+record(ao, "$(P)$(R)SOUR_VOLT_SET")
+{
+    field(DESC, "Set Source Voltage Range")
+    field(DTYP, "stream")
+    field(OUT,  "@B2900.proto setF(:SOURCE:VOLT) $(PORT) $(A)")
+}
+
+record(mbbi, "$(P)$(R)SOUR_VOLT_Output_GET")
+{
+    field(DESC, "Source Voltage Range get")
+    field(DTYP, "stream")
+    field(ZRST, "OFF")
+    field(ONST, "ON")
+    field(INP,  "@B2900.proto getD(:OUTP) $(PORT) $(A)")
+    field(SCAN, "1 second")
+    field(PINI, "YES")
+}
+
+record(mbbo, "$(P)$(R)SOUR_VOLT_Output_SET")
+{
+    field(DESC, "Set Source Voltage Range")
+    field(DTYP, "stream")
+    field(ZRST, "OFF")
+    field(ONST, "ON")
+    field(OUT,  "@B2900.proto setD(:OUTP) $(PORT) $(A)")
+}
+
+record(mbbi, "$(P)$(R)Measuring_GET")
+{
+    field(DESC, "Source Voltage Range get")
+    field(DTYP, "stream")
+    field(ZRST, "OFF")
+    field(ONST, "ON")
+    field(INP,  "@B2900.proto getD(:INP) $(PORT) $(A)")
+    field(SCAN, "1 second")
+    field(PINI, "YES")
+}
+
+record(mbbo, "$(P)$(R)Measuring_SET")
+{
+    field(DESC, "Set Source Voltage Range")
+    field(DTYP, "stream")
+    field(ZRST, "OFF")
+    field(ONST, "ON")
+    field(OUT,  "@B2900.proto setD(:INP) $(PORT) $(A)")
+}
+
+# record(bo, "$(P)$(R)INIT_ACQ")
+# {
+#     field(DESC, "Set Source Voltage Range")
+#     field(DTYP, "stream")
+#     field(OUT,  "@B2900.proto cmd(:INIT:ACQ) $(PORT) $(A)")
+# }
+
+record(aai, "$(P)$(R)FETCH_ARRAY")
+{
+    field(DESC, "SCPI identification string")
+    field(DTYP, "stream")
+    field(INP,  "@B2900.proto getArray(:FETC:ARR) $(PORT) $(A)")
+    field(FTVL, "DOUBLE")
+    field(SCAN, "1 second")
+ 
+
+    field(NELM, "200")
+}
