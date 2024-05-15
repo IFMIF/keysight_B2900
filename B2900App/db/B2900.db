@@ -134,32 +134,18 @@ record(ao, "$(P)$(R)TRIG_ACQ_COUN_SET") {
     field(DTYP, "stream")
     field(OUT,  "@B2900.proto setD(:TRIG:ACQ:COUN) $(PORT) $(A)")
 }
-record(mbbi, "$(P)$(R)TRIG_MODE_GET") {
+record(stringin, "$(P)$(R)TRIG_MODE_GET") {
     field(DESC, "Source Voltage Range")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getD(:TRIG:ACQ:SOUR) $(PORT) $(A)")
+    field(INP,  "@B2900.proto getS(:TRIG:ACQ:SOUR) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
-record(mbbo, "$(P)$(R)TRIG_MODE_SET") {
+record(stringout, "$(P)$(R)TRIG_MODE_SET") {
     field(DESC, "Set Source Voltage Range")
     field(DTYP, "stream")
     field(VAL, "13")
     field(OUT,  "@B2900.proto setD(:TRIG:ACQ:SOUR) $(PORT) $(A)")
-    field(ZRST, "AINT")
-    field(ONST, "BUS")
-    field(TWST, "TIMer")
-    field(THST, "INT1")
-    field(FRST, "INT2")
-    field(FVST, "LAN")
-    field(SXST, "EXT1")
-    field(SVST, "EXT2")
-    field(EIST, "EXT3")
-    field(NIST, "EXT4")
-    field(TEST, "EXT5")
-    field(ELST, "EXT6")
-    field(TVST, "EXT7")
-    field(TTST, "TIN")
 }
 record(ai, "$(P)$(R)CURR_APER_GET") {
     field(DESC, "Get Source Current Aperture")
