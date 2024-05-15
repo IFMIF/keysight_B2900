@@ -18,7 +18,7 @@ B2900_DBD += drvAsynSerialPort.dbd
 B2900_DBD += drvAsynIPPort.dbd
 
 # Link in the code from our support library
-B2900_LIBS += stream calc pcre seq pv sscan
+B2900_LIBS += stream calc #pcre seq pv sscan
 B2900_LIBS += asyn
 
 # DG645_registerRecordDeviceDriver.cpp derives from DG645.dbd
@@ -30,7 +30,7 @@ B2900_SRCS_vxWorks += -nil-
 
 # Finally link IOC to the EPICS Base libraries
 B2900_LIBS += $(EPICS_BASE_IOC_LIBS)
-B2900_SYS_LIBS += usb-1.0
+#B2900_SYS_LIBS += usb-1.0
 
 include $(TOP)/configure/RULES
 #----------------------------------------
