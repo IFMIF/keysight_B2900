@@ -22,7 +22,7 @@
 # the CONFIG_SITE file.
 
 # Support directory
-SUPPORT = /local/home/fb250757/Documents/EPICS/support/
+SUPPORT = /home/epicsmgr/epics-7.0/support
 
 # If using the sequencer, point SNCSEQ at its top directory:
 SNCSEQ = $(SUPPORT)/seq-2.2.8
@@ -31,7 +31,7 @@ ASYN =  $(SUPPORT)/asyn-4.44.2
 CALC=$(SUPPORT)/calc-3.7.4
 
 # EPICS_BASE should appear last so earlier modules can override stuff:
-EPICS_BASE = /local/home/fb250757/Documents/EPICS/base
+EPICS_BASE = /home/epicsmgr/epics-7.0/base
 
 # Set RULES here if you want to use build rules from somewhere
 # other than EPICS_BASE:

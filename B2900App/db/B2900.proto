@@ -32,6 +32,26 @@ getF {
     ExtraInput = Ignore;
 }
 
+setS {
+    out "\$1 %s";
+}
+
+getS {
+    out "\$1?";
+    in "%s";
+    ExtraInput = Ignore;
+}
+
+setB {
+    out "\$1 %b";
+}
+
+getB {
+    out "\$1?";
+    in "%b";
+    ExtraInput = Ignore;
+}
+
 getWF {
     out "\$2";
     in "%\$1[^\r\n]";
