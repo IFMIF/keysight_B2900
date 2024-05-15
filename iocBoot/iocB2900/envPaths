@@ -1,8 +1,0 @@
-epicsEnvSet("IOC","iocB2900")
-epicsEnvSet("TOP","/home/epicsmgr/app/B2900")
-epicsEnvSet("SUPPORT","/home/epicsmgr/epics-7.0/support")
-epicsEnvSet("SNCSEQ","/home/epicsmgr/epics-7.0/support/seq")
-epicsEnvSet("STREAM","/home/epicsmgr/epics-7.0/support/StreamDevice")
-epicsEnvSet("ASYN","/home/epicsmgr/epics-7.0/support/asyn")
-epicsEnvSet("CALC","/home/epicsmgr/epics-7.0/support/calc")
-epicsEnvSet("EPICS_BASE","/home/epicsmgr/epics-7.0/base")

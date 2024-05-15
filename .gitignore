@@ -4,3 +4,4 @@ dbd/**
 lib/**
 **/O.*/**
 /target/
+envPaths
