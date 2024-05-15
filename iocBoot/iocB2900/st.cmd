@@ -7,7 +7,7 @@
 
 cd "${TOP}"
 epicsEnvSet "STREAM_PROTOCOL_PATH" "$(TOP)/db"
-epicsEnvSet "IP" "169.254.5.1"
+epicsEnvSet "IP" "hebt-electrometer"
 epicsEnvSet "IPport" "5025"
 
 # Macro prefix

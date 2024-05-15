@@ -1,6 +1,5 @@
 
 # Common IEEE-488.2 Commands
-
 #
 record(stringin, "$(P)$(R)IDN") {
     field(DESC, "SCPI identification string")
@@ -8,7 +7,6 @@ record(stringin, "$(P)$(R)IDN") {
     field(INP,  "@B2900.proto getIDN(39) $(PORT) $(A)")
     field(PINI, "YES")
 }
-
 record(waveform, "$(P)$(R)IDNwf") {
     field(DESC, "SCPI identification string ")
     field(DTYP, "stream")
@@ -97,18 +95,18 @@ record(stringout, "$(P)$(R)SENS_FUNC_SET") {
     field(OUT,  "@B2900.proto setS(:SENS:FUNC) $(PORT) $(A)")
 }
 # Trigger settings
-record(bo, "$(P)$(R)TIN_Pol_GET") {
+record(stringin, "$(P)$(R)TIN_Pol_GET") {
     field(DESC, "Trigger's polarity Get")
     field(ZNAM, "NEG")
     field(ONAM, "POS")
-    field(OUT,  "@B2900.proto setB(:SYST:TIN:POL) $(PORT) $(A)")
+    field(OUT,  "@B2900.proto getS(:SYST:TIN:POL) $(PORT) $(A)")
 }
-record(bi, "$(P)$(R)TIN_Pol_SET") {
+record(stringout, "$(P)$(R)TIN_Pol_SET") {
     field(DESC, "Trigger's polarity Set")
     field(VAL,  "1")
     field(ZNAM, "NEG")
     field(ONAM, "POS")
-    field(INP,  "@B2900.proto getB(:SYST:TIN:POL) $(PORT) $(A)")
+    field(INP,  "@B2900.proto setS(:SYST:TIN:POL) $(PORT) $(A)")
 }
 record(stringin, "$(P)$(R)TRIG_ACQ_SOUR_GET") {
     field(DESC, "TRIG source for Aquisition GET")
@@ -133,6 +131,30 @@ record(ao, "$(P)$(R)TRIG_ACQ_COUN_SET") {
     field(DESC, "Set Source Voltage Range")
     field(DTYP, "stream")
     field(OUT,  "@B2900.proto setD(:TRIG:ACQ:COUN) $(PORT) $(A)")
+}
+record(ai, "$(P)$(R)TRIG_ACQ_TIM_GET") {
+    field(DESC, "Trigger Period")
+    field(DTYP, "stream")
+    field(INP,  "@B2900.proto getD(:TRIG:ACQ:TIM) $(PORT) $(A)")
+    field(SCAN, "1 second")
+    field(PINI, "YES")
+}
+record(ao, "$(P)$(R)TRIG_ACQ_TIM_SET") {
+    field(DESC, "Trigger Period")
+    field(DTYP, "stream")
+    field(OUT,  "@B2900.proto setD(:TRIG:ACQ:TIM) $(PORT) $(A)")
+}
+record(ai, "$(P)$(R)TRIG_ACQ_DEL_GET") {
+    field(DESC, "Trigger Delay")
+    field(DTYP, "stream")
+    field(INP,  "@B2900.proto getD(:TRIG:ACQ:DEL) $(PORT) $(A)")
+    field(SCAN, "1 second")
+    field(PINI, "YES")
+}
+record(ao, "$(P)$(R)TRIG_ACQ_DEL_SET") {
+    field(DESC, "Trigger Delay")
+    field(DTYP, "stream")
+    field(OUT,  "@B2900.proto setD(:TRIG:ACQ:DEL) $(PORT) $(A)")
 }
 record(stringin, "$(P)$(R)TRIG_MODE_GET") {
     field(DESC, "Source Voltage Range")
@@ -160,6 +182,19 @@ record(ao, "$(P)$(R)CURR_APER_SET") {
     field(OUT,  "@B2900.proto setD(:CURR:APER) $(PORT) $(A)")
 }
 ## Acquisition Commands
+record(stringin, "$(P)$(R)EL_SENS_GET") {
+    field(DESC, "GET data to be fetched")
+    field(DTYP, "stream")
+    field(INP,  "@B2900.proto getS(:FORM:ELEM:SENS) $(PORT) $(A)")
+    field(SCAN, "1 second")
+    field(PINI, "YES")
+}
+record(stringout, "$(P)$(R)EL_SENS_SET") {
+    field(DESC, "SET data to be fetched")
+    field(DTYP, "stream")
+    field(OUT,  "@B2900.proto setS(:FORM:ELEM:SENS) $(PORT) $(A)")
+    field(VAL, "CURR") # only current for a default
+}
 record(bo, "$(P)$(R)INIT_ACQ") {
     field(DESC, "Initiate Acquisition")
     field(DTYP, "stream")
@@ -169,28 +204,12 @@ record(bo, "$(P)$(R)ABOR_ACQ") {
     field(DESC, "Abort Acquisition")
     field(DTYP, "stream")
     field(OUT,  "@B2900.proto cmd(:ABOR:ACQ) $(PORT) $(A)")
+    field(FLNK, "$(P)$(R)FETCH_ARRAY")
 }
 record(aai, "$(P)$(R)FETCH_ARRAY") {
     field(DESC, "Fetch selected array after acquisition")
     field(DTYP, "stream")
     field(INP,  "@B2900.proto getArray(:FETC:ARR) $(PORT) $(A)")
+    field(SCAN, "Passive")
     field(FTVL, "DOUBLE")
-    field(SCAN, "1 second")
-     field(NELM, "200")
 }
-record(stringin, "$(P)$(R)EL_SENS_G") {
-    field(DESC, "GET data to be fetched")
-    field(DTYP, "stream")
-    field(INP,  "@B2900.proto getS(:FORM:ELEM:SENS) $(PORT) $(A)")
-    field(SCAN, "1 second")
-    field(PINI, "YES")
-}
-record(stringout, "$(P)$(R)EL_SENS_S") {
-    field(DESC, "SET data to be fetched")
-    field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setS(:FORM:ELEM:SENS) $(PORT) $(A)")
-    field(VAL, "CURR") # only current for a default
-}
-
-# Aperture time 
-# command: :CURR:APER 0.1 (in seconds)
