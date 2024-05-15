@@ -97,11 +97,11 @@ record(stringout, "$(P)$(R)SENS_FUNC_SET") {
 # Trigger settings
 record(stringin, "$(P)$(R)TIN_Pol_GET") {
     field(DESC, "Trigger's polarity Get")
-    field(OUT,  "@B2900.proto getS(:SYST:TIN:POL) $(PORT) $(A)")
+    field(INP,  "@B2900.proto getS(:SYST:TIN:POL) $(PORT) $(A)")
 }
 record(stringout, "$(P)$(R)TIN_Pol_SET") {
     field(DESC, "Trigger's polarity Set")
-    field(INP,  "@B2900.proto setS(:SYST:TIN:POL) $(PORT) $(A)")
+    field(OUT,  "@B2900.proto setS(:SYST:TIN:POL) $(PORT) $(A)")
 }
 record(stringin, "$(P)$(R)TRIG_ACQ_SOUR_GET") {
     field(DESC, "TRIG source for Aquisition GET")
