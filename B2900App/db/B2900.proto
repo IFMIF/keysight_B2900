@@ -12,20 +12,15 @@ cmd {
     out "\$1";
 }
 
-setD {
-    out "\$1 %d";
-    @init {getD;}
-}
-
 getD {
     out "\$1?";
     in "%d";
     ExtraInput = Ignore;
 }
 
-setF {
-    out "\$1 %f";
-    @init {getF;}
+setD {
+    out "\$1 %d";
+    @init {getD;}
 }
 
 getF {
@@ -34,9 +29,9 @@ getF {
     ExtraInput = Ignore;
 }
 
-setS {
-    out "\$1 %s";
-    @init {getS;}
+setF {
+    out "\$1 %f";
+    @init {getF;}
 }
 
 getS {
@@ -45,15 +40,20 @@ getS {
     ExtraInput = Ignore;
 }
 
-setB {
-    out "\$1 %b";
-    @init {getB;}
+setS {
+    out "\$1 %s";
+    @init {getS;}
 }
 
 getB {
     out "\$1?";
     in "%b";
     ExtraInput = Ignore;
+}
+
+setB {
+    out "\$1 %b";
+    @init {getB;}
 }
 
 getWF {
