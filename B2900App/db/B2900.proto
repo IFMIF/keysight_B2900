@@ -34,6 +34,17 @@ setF {
     @init {getF;}
 }
 
+getE {
+    out "\$1?";
+    in "%E";
+    ExtraInput = Ignore;
+}
+
+setE {
+    out "\$1 %E";
+    @init {getE;}
+}
+
 getS {
     out "\$1?";
     in "%s";
@@ -64,7 +75,7 @@ getWF {
 getArray {
     separator=",";
     out "\$1?";
-    in "%E";
+    in "%f";
 }
 
 # Status and display command

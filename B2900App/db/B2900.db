@@ -15,6 +15,16 @@ record(waveform, "$(P)$(R)IDNwf") {
     field(FTVL, "CHAR")
     field(NELM, "200")
 }
+record(ai, "$(P)$(R)OPC") {
+    field(DESC, "Operation Complete bit")
+    field(DTYP, "stream")
+#    field(ZNAM, "OFF")
+#    field(ONAM, "ON")
+    field(SCAN, "Event")
+    field(INP,  "@B2900.proto getD(*OPC) $(PORT) $(A)")
+    field(FLNK, "$(P)$(R)FETCH_ARRAY")
+    field(PINI, "YES")
+}
 # Voltage Output range 
 record(ai, "$(P)$(R)SOUR_VOLT_RANG_GET") {
     field(DESC, "Get Source Voltage Range")
@@ -97,27 +107,28 @@ record(stringout, "$(P)$(R)SENS_FUNC_SET") {
 record(ai, "$(P)$(R)SENS_CURR_RANG_GET") {
     field(DESC, "Get Sensor Current Range")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getF(:SENS:CURR:RANG) $(PORT) $(A)")
+    field(INP,  "@B2900.proto getE(:SENS:CURR:RANG) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(ao, "$(P)$(R)SENS_CURR_RANG_SET") {
     field(DESC, "Set Sensor Current Range")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setF(:SENS:CURR:RANG) $(PORT) $(A)")
+    field(OUT,  "@B2900.proto setE(:SENS:CURR:RANG) $(PORT) $(A)")
 }
 # Trigger settings
 record(stringin, "$(P)$(R)TIN_Pol_GET") {
     field(DESC, "Trigger's polarity Get")    
     field(DTYP, "stream")
-    field(ZNAM, "NEG")
-    field(ONAM, "POL")
-    field(INP,  "@B2900.proto getB(:SYST:TIN:POL) $(PORT) $(A)")
+#    field(ZNAM, "NEG")
+#    field(ONAM, "POL")
+    field(INP,  "@B2900.proto getS(:SYST:TIN:POL) $(PORT) $(A)")
 }
 record(stringout, "$(P)$(R)TIN_Pol_SET") {
     field(DESC, "Trigger's polarity Set")
     field(DTYP, "stream")
     field(OUT,  "@B2900.proto setS(:SYST:TIN:POL) $(PORT) $(A)")
+    field(SCAN, "1 second")
 }
 record(stringin, "$(P)$(R)TRIG_ACQ_SOUR_GET") {
     field(DESC, "TRIG source for Aquisition GET")
@@ -207,6 +218,7 @@ record(bo, "$(P)$(R)INIT_ACQ") {
     field(DESC, "Initiate Acquisition")
     field(DTYP, "stream")
     field(OUT,  "@B2900.proto cmd(:INIT:ACQ) $(PORT) $(A)")
+    field(FLNK, "$(P)$(R)OPC")
 }
 record(bo, "$(P)$(R)ABOR_ACQ") {
     field(DESC, "Abort Acquisition")
@@ -214,10 +226,11 @@ record(bo, "$(P)$(R)ABOR_ACQ") {
     field(OUT,  "@B2900.proto cmd(:ABOR:ACQ) $(PORT) $(A)")
     field(FLNK, "$(P)$(R)FETCH_ARRAY")
 }
-record(stringin, "$(P)$(R)FETCH_ARRAY") {
+record(aai, "$(P)$(R)FETCH_ARRAY") {
     field(DESC, "Fetch selected array after acquisition")
     field(DTYP, "stream")
     field(INP,  "@B2900.proto getArray(:FETC:ARR) $(PORT) $(A)")
     field(SCAN, "Passive")
-    # field(FTVL, "DOUBLE")
+    field(NELM, "4000")
+    field(FTVL, "FLOAT")
 }
