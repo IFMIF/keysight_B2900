@@ -19,13 +19,13 @@ record(waveform, "$(P)$(R)IDNwf") {
 record(ai, "$(P)$(R)SOUR_VOLT_RANG_GET") {
     field(DESC, "Get Source Voltage Range")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getF(:SOURCE:VOLT:RANG) $(PORT) $(A)")
+    field(INP,  "@B2900.proto getF(:SOUR:VOLT:RANG) $(PORT) $(A)")
     field(PINI, "YES")
 }
 record(ao, "$(P)$(R)SOUR_VOLT_RANG_SET") {
     field(DESC, "Set Source Voltage Range")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setF(:SOURCE:VOLT:RANG) $(PORT) $(A)")
+    field(OUT,  "@B2900.proto setF(:SOUR:VOLT:RANG) $(PORT) $(A)")
 }
 record(ai, "$(P)$(R)SOUR_VOLT_GET") {
     field(DESC, "Get Source Voltage value")
@@ -91,8 +91,18 @@ record(stringin, "$(P)$(R)SENS_FUNC_GET") {
 record(stringout, "$(P)$(R)SENS_FUNC_SET") {
     field(DESC, "set which measurement sensor")
     field(DTYP, "stream")
-    field(VAL, "CURR")
     field(OUT,  "@B2900.proto setS(:SENS:FUNC) $(PORT) $(A)")
+}
+record(ai, "$(P)$(R)SENS_CURR_RANG_GET") {
+    field(DESC, "Get Sensor Current Range")
+    field(DTYP, "stream")
+    field(INP,  "@B2900.proto getF(:SENS:CURR:RANG) $(PORT) $(A)")
+    field(PINI, "YES")
+}
+record(ao, "$(P)$(R)SENS_CURR_RANG_SET") {
+    field(DESC, "Set Sensor Current Range")
+    field(DTYP, "stream")
+    field(OUT,  "@B2900.proto setF(:SENS:CURR:RANG) $(PORT) $(A)")
 }
 # Trigger settings
 record(stringin, "$(P)$(R)TIN_Pol_GET") {
@@ -114,7 +124,7 @@ record(stringin, "$(P)$(R)TRIG_ACQ_SOUR_GET") {
 record(stringout, "$(P)$(R)TRIG_ACQ_SOUR_SET") {
     field(DESC, "TRIG source for Aquisition SET")
     field(DTYP, "stream")
-    field(VAL, "CURR")
+    # field(VAL, "CURR") # to be added later in a proto function
     field(OUT,  "@B2900.proto setS(:TRIG:ACQ:SOUR) $(PORT) $(A)")
 }
 record(ai, "$(P)$(R)TRIG_ACQ_COUN_GET") {
@@ -164,7 +174,7 @@ record(stringout, "$(P)$(R)TRIG_MODE_SET") {
     field(DESC, "Set Source Voltage Range")
     field(DTYP, "stream")
     field(VAL, "13")
-    field(OUT,  "@B2900.proto setD(:TRIG:ACQ:SOUR) $(PORT) $(A)")
+    field(OUT,  "@B2900.proto setS(:TRIG:ACQ:SOUR) $(PORT) $(A)")
 }
 record(ai, "$(P)$(R)CURR_APER_GET") {
     field(DESC, "Get Source Current Aperture")
