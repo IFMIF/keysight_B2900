@@ -20,6 +20,7 @@ record(ai, "$(P)$(R)SOUR_VOLT_RANG_GET") {
     field(DESC, "Get Source Voltage Range")
     field(DTYP, "stream")
     field(INP,  "@B2900.proto getF(:SOUR:VOLT:RANG) $(PORT) $(A)")
+    field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(ao, "$(P)$(R)SOUR_VOLT_RANG_SET") {
@@ -97,6 +98,7 @@ record(ai, "$(P)$(R)SENS_CURR_RANG_GET") {
     field(DESC, "Get Sensor Current Range")
     field(DTYP, "stream")
     field(INP,  "@B2900.proto getF(:SENS:CURR:RANG) $(PORT) $(A)")
+    field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(ao, "$(P)$(R)SENS_CURR_RANG_SET") {
@@ -124,18 +126,17 @@ record(stringin, "$(P)$(R)TRIG_ACQ_SOUR_GET") {
 record(stringout, "$(P)$(R)TRIG_ACQ_SOUR_SET") {
     field(DESC, "TRIG source for Aquisition SET")
     field(DTYP, "stream")
-    # field(VAL, "CURR") # to be added later in a proto function
     field(OUT,  "@B2900.proto setS(:TRIG:ACQ:SOUR) $(PORT) $(A)")
 }
 record(ai, "$(P)$(R)TRIG_ACQ_COUN_GET") {
-    field(DESC, "Source Voltage Range")
+    field(DESC, "Get Trigger Acquisition Counter")
     field(DTYP, "stream")
     field(INP,  "@B2900.proto getD(:TRIG:ACQ:COUN) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(ao, "$(P)$(R)TRIG_ACQ_COUN_SET") {
-    field(DESC, "Set Source Voltage Range")
+    field(DESC, "Set Trigger Acquisition Counter")
     field(DTYP, "stream")
     field(OUT,  "@B2900.proto setD(:TRIG:ACQ:COUN) $(PORT) $(A)")
 }
@@ -164,16 +165,15 @@ record(ao, "$(P)$(R)TRIG_ACQ_DEL_SET") {
     field(OUT,  "@B2900.proto setD(:TRIG:ACQ:DEL) $(PORT) $(A)")
 }
 record(stringin, "$(P)$(R)TRIG_MODE_GET") {
-    field(DESC, "Source Voltage Range")
+    field(DESC, "Get Trigger Mode")
     field(DTYP, "stream")
     field(INP,  "@B2900.proto getS(:TRIG:ACQ:SOUR) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(stringout, "$(P)$(R)TRIG_MODE_SET") {
-    field(DESC, "Set Source Voltage Range")
+    field(DESC, "Set Trigger Mode")
     field(DTYP, "stream")
-    field(VAL, "13")
     field(OUT,  "@B2900.proto setS(:TRIG:ACQ:SOUR) $(PORT) $(A)")
 }
 record(ai, "$(P)$(R)CURR_APER_GET") {
@@ -200,7 +200,6 @@ record(stringout, "$(P)$(R)EL_SENS_SET") {
     field(DESC, "SET data to be fetched")
     field(DTYP, "stream")
     field(OUT,  "@B2900.proto setS(:FORM:ELEM:SENS) $(PORT) $(A)")
-    field(VAL, "CURR") # only current for a default
 }
 record(bo, "$(P)$(R)INIT_ACQ") {
     field(DESC, "Initiate Acquisition")

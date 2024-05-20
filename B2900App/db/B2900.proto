@@ -14,6 +14,7 @@ cmd {
 
 setD {
     out "\$1 %d";
+    @init {getD;}
 }
 
 getD {
@@ -24,6 +25,7 @@ getD {
 
 setF {
     out "\$1 %f";
+    @init {getF;}
 }
 
 getF {
@@ -34,6 +36,7 @@ getF {
 
 setS {
     out "\$1 %s";
+    @init {getS;}
 }
 
 getS {
@@ -44,6 +47,7 @@ getS {
 
 setB {
     out "\$1 %b";
+    @init {getB;}
 }
 
 getB {
