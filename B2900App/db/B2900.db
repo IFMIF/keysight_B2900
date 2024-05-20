@@ -108,9 +108,11 @@ record(ao, "$(P)$(R)SENS_CURR_RANG_SET") {
 }
 # Trigger settings
 record(stringin, "$(P)$(R)TIN_Pol_GET") {
-    field(DESC, "Trigger's polarity Get")
+    field(DESC, "Trigger's polarity Get")    
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getS(:SYST:TIN:POL) $(PORT) $(A)")
+    field(ZNAM, "NEG")
+    field(ONAM, "POL")
+    field(INP,  "@B2900.proto getB(:SYST:TIN:POL) $(PORT) $(A)")
 }
 record(stringout, "$(P)$(R)TIN_Pol_SET") {
     field(DESC, "Trigger's polarity Set")
@@ -143,26 +145,26 @@ record(ao, "$(P)$(R)TRIG_ACQ_COUN_SET") {
 record(ai, "$(P)$(R)TRIG_ACQ_TIM_GET") {
     field(DESC, "Trigger Period")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getD(:TRIG:ACQ:TIM) $(PORT) $(A)")
+    field(INP,  "@B2900.proto getF(:TRIG:ACQ:TIM) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(ao, "$(P)$(R)TRIG_ACQ_TIM_SET") {
     field(DESC, "Trigger Period")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setD(:TRIG:ACQ:TIM) $(PORT) $(A)")
+    field(OUT,  "@B2900.proto setF(:TRIG:ACQ:TIM) $(PORT) $(A)")
 }
 record(ai, "$(P)$(R)TRIG_ACQ_DEL_GET") {
     field(DESC, "Trigger Delay")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getD(:TRIG:ACQ:DEL) $(PORT) $(A)")
+    field(INP,  "@B2900.proto getF(:TRIG:ACQ:DEL) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(ao, "$(P)$(R)TRIG_ACQ_DEL_SET") {
     field(DESC, "Trigger Delay")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setD(:TRIG:ACQ:DEL) $(PORT) $(A)")
+    field(OUT,  "@B2900.proto setF(:TRIG:ACQ:DEL) $(PORT) $(A)")
 }
 record(stringin, "$(P)$(R)TRIG_MODE_GET") {
     field(DESC, "Get Trigger Mode")
@@ -179,14 +181,14 @@ record(stringout, "$(P)$(R)TRIG_MODE_SET") {
 record(ai, "$(P)$(R)CURR_APER_GET") {
     field(DESC, "Get Source Current Aperture")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getD(:CURR:APER) $(PORT) $(A)")
+    field(INP,  "@B2900.proto getF(:CURR:APER) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(ao, "$(P)$(R)CURR_APER_SET") {
     field(DESC, "Set Source Current Aperture")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setD(:CURR:APER) $(PORT) $(A)")
+    field(OUT,  "@B2900.proto setF(:CURR:APER) $(PORT) $(A)")
 }
 ## Acquisition Commands
 record(stringin, "$(P)$(R)EL_SENS_GET") {
@@ -212,10 +214,10 @@ record(bo, "$(P)$(R)ABOR_ACQ") {
     field(OUT,  "@B2900.proto cmd(:ABOR:ACQ) $(PORT) $(A)")
     field(FLNK, "$(P)$(R)FETCH_ARRAY")
 }
-record(aai, "$(P)$(R)FETCH_ARRAY") {
+record(stringin, "$(P)$(R)FETCH_ARRAY") {
     field(DESC, "Fetch selected array after acquisition")
     field(DTYP, "stream")
     field(INP,  "@B2900.proto getArray(:FETC:ARR) $(PORT) $(A)")
     field(SCAN, "Passive")
-    field(FTVL, "DOUBLE")
+    # field(FTVL, "DOUBLE")
 }
