@@ -4,6 +4,7 @@ include $(TOP)/configure/CONFIG
 
 # Install .dbd and .db files
 DB += B2900.db
+DB += B2900Process.db
 DB += B2900.proto
 
 #=======================================
