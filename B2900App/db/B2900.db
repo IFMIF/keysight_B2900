@@ -231,6 +231,6 @@ record(aai, "$(P)$(R)FETCH_ARRAY") {
     field(DTYP, "stream")
     field(INP,  "@B2900.proto getArray(:FETC:ARR) $(PORT) $(A)")
     field(SCAN, "Passive")
-    field(NELM, "4000")
+    field(NELM, "$(FETCH_SIZE)")
     field(FTVL, "FLOAT")
 }

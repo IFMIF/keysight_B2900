@@ -16,6 +16,7 @@ B2900_DBD += stream.dbd
 B2900_DBD += asyn.dbd
 B2900_DBD += drvAsynSerialPort.dbd
 B2900_DBD += drvAsynIPPort.dbd
+B2900_DBD += B2900Process.dbd
 
 # Link in the code from our support library
 B2900_LIBS += stream calc pcre seq pv sscan
@@ -23,6 +24,7 @@ B2900_LIBS += asyn
 
 # DG645_registerRecordDeviceDriver.cpp derives from DG645.dbd
 B2900_SRCS += B2900_registerRecordDeviceDriver.cpp
+B2900_SRCS += B2900Process.cpp
 
 # Build the main IOC entry point where needed
 B2900_SRCS_DEFAULT += B2900Main.cpp
