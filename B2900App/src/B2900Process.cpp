@@ -9,16 +9,20 @@ static long arrayParse(aSubRecord *prec){
     long i;
     float *input, *output_current, *output_time;
 
-    printf("arrayParse start");
-
+    // Pointers assignation to their correct prec
     input = (float *)prec->a;
     output_current = (float *)prec->vala;
     output_time = (float *)prec->valb;
-    
-    for (i=0; i<prec->noa; i+=2){
+
+    // Parsing the input into the outputs (nea is the limit of the current processed measure)
+    for (i=0; i<prec->nea; i+=2){
         output_current[i/2] = input[i];
         output_time[i/2] = input[i+1];
     }
+
+    // Setting the limits of the arrays
+    prec->neva = prec->nea/2;
+    prec->nevb = prec->nea/2;
 
     return 0;
 }
