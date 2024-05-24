@@ -233,4 +233,5 @@ record(aai, "$(P)$(R)FETCH_ARRAY") {
     field(SCAN, "Passive")
     field(NELM, "$(FETCH_SIZE)")
     field(FTVL, "FLOAT")
+    field(FLNK, "$(P)$(R)Array_Parser")
 }

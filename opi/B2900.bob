@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-05-20 17:59:23 by ifmif-->
+<!--Saved on 2024-05-21 17:56:14 by ifmif-->
 <display version="2.0.0">
   <macros>
     <P>DCU08</P>
@@ -961,34 +961,124 @@
     <y>6</y>
     <width>402</width>
     <height>648</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="9.0">
-      </font>
-    </font>
     <format>3</format>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button_3</name>
     <actions>
+      <action type="command">
+        <command>exportData.sh</command>
+        <description>Execute Command</description>
+      </action>
       <action type="execute">
         <script file="EmbeddedPy">
           <text><![CDATA[# Embedded python script
 from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
 
-array = PVUtil.getString("DCU08:B2900:FETCH_ARRAY")
-
-file = open("tmp.csv")
-file.write(array)
-file.close()
+sizeOfArray = PVUtil.getString(pvs[0])
+print(sizeOfArray)
 
 # widget.setPropertyValue('text', PVUtil.getString(pvs[0]))]]></text>
         </script>
-        <description>Export to tmp.csv</description>
+        <description>Execute Script</description>
       </action>
     </actions>
+    <pv_name>DCU08:B2900:Array_Parser.NEA</pv_name>
     <x>1026</x>
     <y>666</y>
     <width>160</width>
     <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>Data Browser_2</name>
+    <x>13</x>
+    <y>700</y>
+    <width>751</width>
+    <height>318</height>
+    <title_font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </title_font>
+    <actions>
+    </actions>
+    <tooltip></tooltip>
+    <x_axis>
+      <title>Primary X Axis (0)</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>10.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>Primary Y Axis (1)</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>$(traces[0].y_pv)</name>
+        <x_pv>${P}:${R}:TIME_ARRAY</x_pv>
+        <y_pv>${P}:${R}:CURR_ARRAY</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="21" green="21" blue="196">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_6</name>
+    <pv_name>${P}:${R}:TIME_ARRAY</pv_name>
+    <x>775</x>
+    <y>726</y>
+    <width>402</width>
+    <height>276</height>
+    <format>3</format>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_7</name>
+    <pv_name>${P}:${R}:CURR_ARRAY</pv_name>
+    <x>1186</x>
+    <y>726</y>
+    <width>402</width>
+    <height>276</height>
+    <format>3</format>
   </widget>
 </display>
