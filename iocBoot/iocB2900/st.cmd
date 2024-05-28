@@ -11,7 +11,7 @@ epicsEnvSet "IP" "hebt-electrometer"
 epicsEnvSet "IPport" "5025"
 
 # Macro prefix
-epicsEnvSet "P" "DCU08:"
+epicsEnvSet "P" "DIAG:"
 epicsEnvSet "R" "B2900:"
 epicsEnvSet "FETCH_SIZE" "4000"
 

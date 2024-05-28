@@ -2,7 +2,7 @@
 <!--Saved on 2024-05-21 17:56:14 by ifmif-->
 <display version="2.0.0">
   <macros>
-    <P>DCU08</P>
+    <P>DIAG</P>
     <R>B2900</R>
   </macros>
   <width>950</width>
