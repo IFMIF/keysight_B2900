@@ -1,0 +1,1160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-05-23 13:26:48 by ifmif-->
+<display version="2.0.0">
+  <macros>
+    <P>DIAG</P>
+    <R>B2900</R>
+  </macros>
+  <width>950</width>
+  <height>700</height>
+  <background_color>
+    <color red="240" green="240" blue="240">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="group" version="2.0.0">
+    <name>Trigger</name>
+    <x>6</x>
+    <y>6</y>
+    <width>379</width>
+    <height>217</height>
+    <style>1</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update</name>
+      <pv_name>${P}:${R}:TIN_Pol_GET</pv_name>
+      <x>270</x>
+      <y>6</y>
+      <visible>false</visible>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>TIN Polarity</text>
+      <x>6</x>
+      <y>40</y>
+      <width>145</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>${P}:${R}:TRIG_ACQ_DEL_GET</pv_name>
+      <x>270</x>
+      <y>70</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>1</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_2</name>
+      <text>Delay</text>
+      <x>6</x>
+      <y>70</y>
+      <width>145</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_3</name>
+      <pv_name>${P}:${R}:TRIG_ACQ_TIM_GET</pv_name>
+      <x>270</x>
+      <y>100</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>1</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_3</name>
+      <text>Period</text>
+      <x>6</x>
+      <y>100</y>
+      <width>145</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_3</name>
+      <pv_name>${P}:${R}:TRIG_ACQ_TIM_SET</pv_name>
+      <x>156</x>
+      <y>100</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>1</precision>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_4</name>
+      <pv_name>${P}:${R}:TRIG_ACQ_COUN_GET</pv_name>
+      <x>270</x>
+      <y>130</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <precision>0</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_4</name>
+      <text>Counter</text>
+      <x>6</x>
+      <y>130</y>
+      <width>145</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_4</name>
+      <pv_name>${P}:${R}:TRIG_ACQ_COUN_SET</pv_name>
+      <x>156</x>
+      <y>130</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <precision>0</precision>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_2</name>
+      <text>Aperture time</text>
+      <x>6</x>
+      <y>160</y>
+      <width>145</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_2</name>
+      <pv_name>${P}:${R}:CURR_APER_SET</pv_name>
+      <x>156</x>
+      <y>160</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>1</precision>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>${P}:${R}:CURR_APER_GET</pv_name>
+      <x>270</x>
+      <y>160</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>1</precision>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Combo_2</name>
+      <pv_name>${P}:${R}:TIN_Pol_SET</pv_name>
+      <x>156</x>
+      <y>40</y>
+      <height>20</height>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <items>
+        <item>POS</item>
+        <item>NEG</item>
+      </items>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_6</name>
+      <pv_name>${P}:${R}:TRIG_ACQ_DEL_SET</pv_name>
+      <x>156</x>
+      <y>70</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>1</precision>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>Mode</text>
+      <x>6</x>
+      <y>10</y>
+      <width>145</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Combo</name>
+      <pv_name>${P}:${R}:TRIG_MODE_SET</pv_name>
+      <x>156</x>
+      <y>10</y>
+      <height>20</height>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <items>
+        <item>TIN</item>
+        <item>AINT</item>
+        <item>BUS</item>
+        <item>TIMer</item>
+        <item>INT1</item>
+        <item>LAN</item>
+        <item>EXT1</item>
+        <item></item>
+      </items>
+      <items_from_pv>false</items_from_pv>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_1</name>
+      <pv_name>${P}:${R}:TRIG_MODE_GET</pv_name>
+      <x>270</x>
+      <y>10</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Settings</name>
+    <x>396</x>
+    <y>6</y>
+    <width>379</width>
+    <height>217</height>
+    <style>1</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update</name>
+      <pv_name>${P}:${R}:SENS_CURR_RANG_GET</pv_name>
+      <x>270</x>
+      <y>6</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <format>2</format>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>Current limit</text>
+      <x>6</x>
+      <y>6</y>
+      <width>145</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_1</name>
+      <pv_name>${P}:${R}:SOUR_VOLT_RANG_GET</pv_name>
+      <x>270</x>
+      <y>42</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_2</name>
+      <text>Output Voltage</text>
+      <x>6</x>
+      <y>72</y>
+      <width>145</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>Output Voltage Range</text>
+      <x>6</x>
+      <y>42</y>
+      <width>145</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>${P}:${R}:SOUR_VOLT_GET</pv_name>
+      <x>270</x>
+      <y>72</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Combo</name>
+      <pv_name>${P}:${R}:SOUR_VOLT_RANG_SET</pv_name>
+      <x>156</x>
+      <y>36</y>
+      <height>29</height>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <items>
+        <item>20</item>
+        <item>1000</item>
+        <item>-1000</item>
+      </items>
+      <items_from_pv>false</items_from_pv>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_4</name>
+      <text>Sens Function</text>
+      <x>6</x>
+      <y>108</y>
+      <width>145</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_3</name>
+      <pv_name>${P}:${R}:SENS_FUNC_GET</pv_name>
+      <x>270</x>
+      <y>108</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_2</name>
+      <pv_name>${P}:${R}:SOUR_VOLT_SET</pv_name>
+      <x>156</x>
+      <y>72</y>
+      <height>25</height>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_5</name>
+      <text>:FORM:ELEM:SENS</text>
+      <x>6</x>
+      <y>138</y>
+      <width>145</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_4</name>
+      <pv_name>${P}:${R}:EL_SENS_GET</pv_name>
+      <x>270</x>
+      <y>138</y>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_3</name>
+      <pv_name>${P}:${R}:EL_SENS_SET</pv_name>
+      <x>156</x>
+      <y>138</y>
+      <height>25</height>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Combo_1</name>
+      <pv_name>${P}:${R}:SENS_FUNC_SET</pv_name>
+      <x>156</x>
+      <y>102</y>
+      <height>29</height>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <items>
+        <item>"VOLT"</item>
+        <item>"CURR"</item>
+      </items>
+      <items_from_pv>false</items_from_pv>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_5</name>
+      <pv_name>${P}:${R}:SENS_CURR_RANG_SET</pv_name>
+      <x>156</x>
+      <y>6</y>
+      <height>25</height>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <format>2</format>
+      <precision>0</precision>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Measure</name>
+    <x>6</x>
+    <y>234</y>
+    <width>769</width>
+    <height>466</height>
+    <style>1</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+          <description>Init Acquisition</description>
+        </action>
+      </actions>
+      <pv_name>${P}:${R}:INIT_ACQ</pv_name>
+      <x>23</x>
+      <y>6</y>
+      <width>150</width>
+      <height>20</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_1</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+          <description>Abort Acquisition</description>
+        </action>
+      </actions>
+      <pv_name>${P}:${R}:ABOR_ACQ</pv_name>
+      <x>193</x>
+      <y>6</y>
+      <width>150</width>
+      <height>20</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_3</name>
+      <text>Fetched Data</text>
+      <x>101</x>
+      <y>95</y>
+      <width>145</width>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_2</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+          <description>Fetch Array</description>
+        </action>
+      </actions>
+      <pv_name>${P}:${R}:FETCH_ARRAY</pv_name>
+      <x>77</x>
+      <y>36</y>
+      <width>206</width>
+      <height>20</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <show_confirm_dialog>true</show_confirm_dialog>
+      <confirm_message>Are your sure you want to do this? 
+If the acquisition is not finished, this will lock ALL this interface.
+(but everything will be fine when the acquisition ends)</confirm_message>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Actuators</name>
+      <x>378</x>
+      <y>6</y>
+      <width>379</width>
+      <height>90</height>
+      <style>1</style>
+      <foreground_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <widget type="label" version="2.0.0">
+        <name>Label</name>
+        <text>Output Voltage (on/off)</text>
+        <x>6</x>
+        <y>6</y>
+        <width>145</width>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED</name>
+        <pv_name>${P}:${R}:SOUR_Output_GET</pv_name>
+        <x>272</x>
+        <y>8</y>
+        <width>63</width>
+        <off_label>OFF</off_label>
+        <off_color>
+          <color red="0" green="100" blue="0">
+          </color>
+        </off_color>
+        <on_label>ON</on_label>
+        <foreground_color>
+          <color red="192" green="192" blue="192">
+          </color>
+        </foreground_color>
+        <line_color>
+          <color red="150" green="150" blue="150">
+          </color>
+        </line_color>
+        <square>true</square>
+        <actions>
+        </actions>
+      </widget>
+      <widget type="choice" version="2.0.0">
+        <name>Choice Button</name>
+        <pv_name>${P}:${R}:SOUR_Output_SET</pv_name>
+        <x>156</x>
+        <y>6</y>
+        <height>24</height>
+        <background_color>
+          <color red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <selected_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </selected_color>
+        <actions>
+        </actions>
+        <items>
+          <item>Item 1</item>
+          <item>Item 2</item>
+        </items>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_2</name>
+        <text>Input (on/off)</text>
+        <x>6</x>
+        <y>36</y>
+        <width>145</width>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_1</name>
+        <pv_name>${P}:${R}:INP_STAT_GET</pv_name>
+        <x>272</x>
+        <y>38</y>
+        <width>63</width>
+        <off_label>OFF</off_label>
+        <off_color>
+          <color red="0" green="100" blue="0">
+          </color>
+        </off_color>
+        <on_label>ON</on_label>
+        <foreground_color>
+          <color red="192" green="192" blue="192">
+          </color>
+        </foreground_color>
+        <line_color>
+          <color red="150" green="150" blue="150">
+          </color>
+        </line_color>
+        <square>true</square>
+        <actions>
+        </actions>
+      </widget>
+      <widget type="choice" version="2.0.0">
+        <name>Choice Button_1</name>
+        <pv_name>${P}:${R}:INP_STAT_SET</pv_name>
+        <x>156</x>
+        <y>36</y>
+        <height>24</height>
+        <background_color>
+          <color red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <selected_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </selected_color>
+        <actions>
+        </actions>
+        <items>
+          <item>Item 1</item>
+          <item>Item 2</item>
+        </items>
+      </widget>
+    </widget>
+    <widget type="xyplot" version="3.0.0">
+      <name>Data Browser_2</name>
+      <x>6</x>
+      <y>115</y>
+      <width>372</width>
+      <height>318</height>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <actions>
+      </actions>
+      <tooltip></tooltip>
+      <x_axis>
+        <title>Primary X Axis (0)</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>10.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <visible>true</visible>
+      </x_axis>
+      <y_axes>
+        <y_axis>
+          <title>Primary Y Axis (1)</title>
+          <autoscale>true</autoscale>
+          <log_scale>false</log_scale>
+          <minimum>0.0</minimum>
+          <maximum>100.0</maximum>
+          <show_grid>true</show_grid>
+          <title_font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </title_font>
+          <scale_font>
+            <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+            </font>
+          </scale_font>
+          <on_right>false</on_right>
+          <visible>true</visible>
+          <color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </color>
+        </y_axis>
+      </y_axes>
+      <traces>
+        <trace>
+          <name>$(traces[0].y_pv)</name>
+          <x_pv>${P}:${R}:TIME_ARRAY</x_pv>
+          <y_pv>${P}:${R}:CURR_ARRAY</y_pv>
+          <err_pv></err_pv>
+          <axis>0</axis>
+          <trace_type>1</trace_type>
+          <color>
+            <color red="21" green="21" blue="196">
+            </color>
+          </color>
+          <line_width>1</line_width>
+          <line_style>0</line_style>
+          <point_type>0</point_type>
+          <point_size>4</point_size>
+          <visible>true</visible>
+        </trace>
+      </traces>
+    </widget>
+    <widget type="xyplot" version="3.0.0">
+      <name>Data Browser_3</name>
+      <x>385</x>
+      <y>115</y>
+      <width>372</width>
+      <height>318</height>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <actions>
+      </actions>
+      <tooltip></tooltip>
+      <x_axis>
+        <title>Primary X Axis (0)</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>10.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <visible>true</visible>
+      </x_axis>
+      <y_axes>
+        <y_axis>
+          <title>Primary Y Axis (1)</title>
+          <autoscale>true</autoscale>
+          <log_scale>false</log_scale>
+          <minimum>0.0</minimum>
+          <maximum>100.0</maximum>
+          <show_grid>true</show_grid>
+          <title_font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </title_font>
+          <scale_font>
+            <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+            </font>
+          </scale_font>
+          <on_right>false</on_right>
+          <visible>true</visible>
+          <color>
+            <color name="Text" red="0" green="0" blue="0">
+            </color>
+          </color>
+        </y_axis>
+      </y_axes>
+      <traces>
+        <trace>
+          <name>$(traces[0].y_pv)</name>
+          <x_pv></x_pv>
+          <y_pv>${P}:${R}:FETCH_ARRAY</y_pv>
+          <err_pv></err_pv>
+          <axis>0</axis>
+          <trace_type>1</trace_type>
+          <color>
+            <color red="21" green="21" blue="196">
+            </color>
+          </color>
+          <line_width>1</line_width>
+          <line_style>0</line_style>
+          <point_type>0</point_type>
+          <point_size>4</point_size>
+          <visible>true</visible>
+        </trace>
+      </traces>
+    </widget>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Update_5</name>
+    <pv_name>${P}:${R}:FETCH_ARRAY</pv_name>
+    <x>786</x>
+    <y>6</y>
+    <width>402</width>
+    <height>81</height>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <format>3</format>
+    <vertical_alignment>0</vertical_alignment>
+    <wrap_words>true</wrap_words>
+    <multi_line>true</multi_line>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="command">
+        <command>exportData.sh</command>
+        <description>Execute Command</description>
+      </action>
+    </actions>
+    <pv_name>DCU08:B2900:Array_Parser.NEA</pv_name>
+    <x>1140</x>
+    <y>666</y>
+    <width>160</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_6</name>
+    <pv_name>${P}:${R}:TIME_ARRAY</pv_name>
+    <y>714</y>
+    <width>1794</width>
+    <height>48</height>
+    <format>3</format>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Update_7</name>
+    <pv_name>${P}:${R}:CURR_ARRAY</pv_name>
+    <x>786</x>
+    <y>133</y>
+    <width>1008</width>
+    <height>521</height>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <format>3</format>
+    <vertical_alignment>0</vertical_alignment>
+    <wrap_words>true</wrap_words>
+    <multi_line>true</multi_line>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>Data Browser_4</name>
+    <x>6</x>
+    <y>774</y>
+    <width>379</width>
+    <height>492</height>
+    <title_font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </title_font>
+    <actions>
+    </actions>
+    <tooltip></tooltip>
+    <x_axis>
+      <title>Primary X Axis (0)</title>
+      <autoscale>true</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>10.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>Primary Y Axis (1)</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>$(traces[0].y_pv)</name>
+        <x_pv></x_pv>
+        <y_pv>${P}:${R}:TIME_ARRAY</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="21" green="21" blue="196">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+</display>
