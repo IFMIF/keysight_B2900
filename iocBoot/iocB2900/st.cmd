@@ -13,7 +13,8 @@ epicsEnvSet "IPport" "5025"
 # Macro prefix
 epicsEnvSet "P" "DIAG:"
 epicsEnvSet "R" "B2900:"
-epicsEnvSet "FETCH_SIZE" "4000"
+epicsEnvSet "FETCH_SIZE" "20000"
+epicsEnvSet "DATA_SIZE" "10000"
 
 ## Register all support components
 dbLoadDatabase "dbd/B2900.dbd"
@@ -30,7 +31,7 @@ epicsThreadSleep(2)
 ## Load record instances
 #dbLoadRecords("db/asynRecord.db","P=$(P),R=$(R),PORT=L0,ADDR=0,IMAX=200,OMAX=200")
 dbLoadRecords("db/B2900.db","P=$(P),R=$(R),PORT=L0,A=0,FETCH_SIZE=$(FETCH_SIZE)")
-dbLoadRecords("db/B2900Process.db","P=$(P),R=$(R),FETCH_SIZE=$(FETCH_SIZE)")
+dbLoadRecords("db/B2900Process.db","P=$(P),R=$(R),FETCH_SIZE=$(FETCH_SIZE),DATA_SIZE=$(DATA_SIZE)")
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit
