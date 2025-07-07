@@ -4,13 +4,13 @@
 record(stringin, "$(P)$(R)IDN") {
     field(DESC, "SCPI identification string")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getIDN(39) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getIDN(39) $(PORT) $(A)")
     field(PINI, "YES")
 }
 record(waveform, "$(P)$(R)IDNwf") {
     field(DESC, "SCPI identification string ")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getIDN(199) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getIDN(199) $(PORT) $(A)")
     field(PINI, "YES")
     field(FTVL, "CHAR")
     field(NELM, "200")
@@ -21,7 +21,7 @@ record(ai, "$(P)$(R)OPC") {
 #    field(ZNAM, "OFF")
 #    field(ONAM, "ON")
     field(SCAN, "Event")
-    field(INP,  "@B2900.proto getD(*OPC) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getD(*OPC) $(PORT) $(A)")
     field(FLNK, "$(P)$(R)FETCH_ARRAY")
     field(PINI, "YES")
 }
@@ -29,33 +29,33 @@ record(ai, "$(P)$(R)OPC") {
 record(ai, "$(P)$(R)SOUR_VOLT_RANG_GET") {
     field(DESC, "Get Source Voltage Range")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getF(:SOUR:VOLT:RANG) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getF(:SOUR:VOLT:RANG) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(ao, "$(P)$(R)SOUR_VOLT_RANG_SET") {
     field(DESC, "Set Source Voltage Range")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setF(:SOUR:VOLT:RANG) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto setF(:SOUR:VOLT:RANG) $(PORT) $(A)")
 }
 record(ai, "$(P)$(R)SOUR_VOLT_GET") {
     field(DESC, "Get Source Voltage value")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getF(:SOUR:VOLT) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getF(:SOUR:VOLT) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(ao, "$(P)$(R)SOUR_VOLT_SET") {
     field(DESC, "Set Source Voltage value")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setF(:SOUR:VOLT) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto setF(:SOUR:VOLT) $(PORT) $(A)")
 }
 record(bi, "$(P)$(R)SOUR_Output_GET") {
     field(DESC, "En/disable source output (get)")
     field(DTYP, "stream")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
-    field(INP,  "@B2900.proto getD(:OUTP) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getD(:OUTP) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
@@ -64,25 +64,25 @@ record(bo, "$(P)$(R)SOUR_Output_SET") {
     field(DTYP, "stream")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
-    field(OUT,  "@B2900.proto setD(:OUTP) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto setD(:OUTP) $(PORT) $(A)")
 }
 # record(ai, "$(P)$(R)SOUR_CURR_RANG_GET") {
 #     field(DESC, "Get Source Current Range")
 #     field(DTYP, "stream")
-#     field(INP,  "@B2900.proto getF(:SOURCE:VOLT:RANG) $(PORT) $(A)")
+#     field(INP,  "@keysight_B2900.proto getF(:SOURCE:VOLT:RANG) $(PORT) $(A)")
 #     field(PINI, "YES")
 # }
 # record(ao, "$(P)$(R)SOUR_CURR_RANG_SET") {
 #     field(DESC, "Set Source Current Range")
 #     field(DTYP, "stream")
-#     field(OUT,  "@B2900.proto setF(:SOURCE:VOLT:RANG) $(PORT) $(A)")
+#     field(OUT,  "@keysight_B2900.proto setF(:SOURCE:VOLT:RANG) $(PORT) $(A)")
 # }
 record(bi, "$(P)$(R)INP_STAT_GET") {
     field(DESC, "En/disable current or charge input (get)")
     field(DTYP, "stream")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
-    field(INP,  "@B2900.proto getD(:INP:STAT) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getD(:INP:STAT) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
@@ -91,30 +91,30 @@ record(bo, "$(P)$(R)INP_STAT_SET") {
     field(DTYP, "stream")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
-    field(OUT,  "@B2900.proto setD(:INP) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto setD(:INP) $(PORT) $(A)")
 }
 record(stringin, "$(P)$(R)SENS_FUNC_GET") {
     field(DESC, "get which measurement sensor")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getS(:SENS:FUNC) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getS(:SENS:FUNC) $(PORT) $(A)")
     field(SCAN, "1 second")
 }
 record(stringout, "$(P)$(R)SENS_FUNC_SET") {
     field(DESC, "set which measurement sensor")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setS(:SENS:FUNC) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto setS(:SENS:FUNC) $(PORT) $(A)")
 }
 record(ai, "$(P)$(R)SENS_CURR_RANG_GET") {
     field(DESC, "Get Sensor Current Range")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getE(:SENS:CURR:RANG) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getE(:SENS:CURR:RANG) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(ao, "$(P)$(R)SENS_CURR_RANG_SET") {
     field(DESC, "Set Sensor Current Range")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setE(:SENS:CURR:RANG) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto setE(:SENS:CURR:RANG) $(PORT) $(A)")
 }
 # Trigger settings
 record(stringin, "$(P)$(R)TIN_Pol_GET") {
@@ -122,116 +122,148 @@ record(stringin, "$(P)$(R)TIN_Pol_GET") {
     field(DTYP, "stream")
 #    field(ZNAM, "NEG")
 #    field(ONAM, "POL")
-    field(INP,  "@B2900.proto getS(:SYST:TIN:POL) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getS(:SYST:TIN:POL) $(PORT) $(A)")
 }
 record(stringout, "$(P)$(R)TIN_Pol_SET") {
     field(DESC, "Trigger's polarity Set")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setS(:SYST:TIN:POL) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto setS(:SYST:TIN:POL) $(PORT) $(A)")
     field(SCAN, "1 second")
 }
 record(stringin, "$(P)$(R)TRIG_ACQ_SOUR_GET") {
     field(DESC, "TRIG source for Aquisition GET")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getS(:TRIG:ACQ:SOUR) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getS(:TRIG:ACQ:SOUR) $(PORT) $(A)")
     field(SCAN, "1 second")
 }
 record(stringout, "$(P)$(R)TRIG_ACQ_SOUR_SET") {
     field(DESC, "TRIG source for Aquisition SET")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setS(:TRIG:ACQ:SOUR) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto setS(:TRIG:ACQ:SOUR) $(PORT) $(A)")
 }
 record(ai, "$(P)$(R)TRIG_ACQ_COUN_GET") {
     field(DESC, "Get Trigger Acquisition Counter")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getD(:TRIG:ACQ:COUN) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getD(:TRIG:ACQ:COUN) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(ao, "$(P)$(R)TRIG_ACQ_COUN_SET") {
     field(DESC, "Set Trigger Acquisition Counter")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setD(:TRIG:ACQ:COUN) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto setD(:TRIG:ACQ:COUN) $(PORT) $(A)")
 }
 record(ai, "$(P)$(R)TRIG_ACQ_TIM_GET") {
     field(DESC, "Trigger Period")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getF(:TRIG:ACQ:TIM) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getF(:TRIG:ACQ:TIM) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(ao, "$(P)$(R)TRIG_ACQ_TIM_SET") {
     field(DESC, "Trigger Period")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setF(:TRIG:ACQ:TIM) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto setF(:TRIG:ACQ:TIM) $(PORT) $(A)")
 }
 record(ai, "$(P)$(R)TRIG_ACQ_DEL_GET") {
     field(DESC, "Trigger Delay")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getF(:TRIG:ACQ:DEL) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getF(:TRIG:ACQ:DEL) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(ao, "$(P)$(R)TRIG_ACQ_DEL_SET") {
     field(DESC, "Trigger Delay")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setF(:TRIG:ACQ:DEL) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto setF(:TRIG:ACQ:DEL) $(PORT) $(A)")
 }
 record(stringin, "$(P)$(R)TRIG_MODE_GET") {
     field(DESC, "Get Trigger Mode")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getS(:TRIG:ACQ:SOUR) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getS(:TRIG:ACQ:SOUR) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(stringout, "$(P)$(R)TRIG_MODE_SET") {
     field(DESC, "Set Trigger Mode")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setS(:TRIG:ACQ:SOUR) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto setS(:TRIG:ACQ:SOUR) $(PORT) $(A)")
 }
 record(ai, "$(P)$(R)CURR_APER_GET") {
     field(DESC, "Get Source Current Aperture")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getF(:CURR:APER) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getF(:CURR:APER) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(ao, "$(P)$(R)CURR_APER_SET") {
     field(DESC, "Set Source Current Aperture")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setF(:CURR:APER) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto setF(:CURR:APER) $(PORT) $(A)")
 }
 ## Acquisition Commands
 record(stringin, "$(P)$(R)EL_SENS_GET") {
     field(DESC, "GET data to be fetched")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getS(:FORM:ELEM:SENS) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getS(:FORM:ELEM:SENS) $(PORT) $(A)")
     field(SCAN, "1 second")
     field(PINI, "YES")
 }
 record(stringout, "$(P)$(R)EL_SENS_SET") {
     field(DESC, "SET data to be fetched")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto setS(:FORM:ELEM:SENS) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto setS(:FORM:ELEM:SENS) $(PORT) $(A)")
 }
 record(bo, "$(P)$(R)INIT_ACQ") {
     field(DESC, "Initiate Acquisition")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto cmd(:INIT:ACQ) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto cmd(:INIT:ACQ) $(PORT) $(A)")
     field(FLNK, "$(P)$(R)OPC")
 }
 record(bo, "$(P)$(R)ABOR_ACQ") {
     field(DESC, "Abort Acquisition")
     field(DTYP, "stream")
-    field(OUT,  "@B2900.proto cmd(:ABOR:ACQ) $(PORT) $(A)")
+    field(OUT,  "@keysight_B2900.proto cmd(:ABOR:ACQ) $(PORT) $(A)")
     field(FLNK, "$(P)$(R)FETCH_ARRAY")
 }
 record(aai, "$(P)$(R)FETCH_ARRAY") {
     field(DESC, "Fetch selected array after acquisition")
     field(DTYP, "stream")
-    field(INP,  "@B2900.proto getArray(:FETC:ARR) $(PORT) $(A)")
+    field(INP,  "@keysight_B2900.proto getArray(:FETC:ARR) $(PORT) $(A)")
     field(SCAN, "Passive")
     field(NELM, "$(FETCH_SIZE)")
     field(FTVL, "FLOAT")
     field(FLNK, "$(P)$(R)Array_Parser")
+}
+
+# -----------------------------------------------------------------------------
+
+record(aSub, "$(P)$(R)Array_Parser") {
+    field(DESC, "Parsing the output Array")
+    field(SNAM, "arrayParse")
+    field(INPA, "$(P)$(R)FETCH_ARRAY")
+    field(FTA,  "FLOAT")
+    field(NOA,  "$(FETCH_SIZE)")
+    field(SCAN, "Passive")
+    # outputs
+    field(OUTA, "$(P)$(R)CURR_ARRAY PP")
+    field(FTVA, "FLOAT")
+    field(NOVA, "$(FETCH_SIZE)")
+    field(OUTB, "$(P)$(R)TIME_ARRAY PP")
+    field(FTVB, "FLOAT")
+    field(NOVB, "$(FETCH_SIZE)")
+}
+
+record(aao, "$(P)$(R)CURR_ARRAY") {
+    field(DESC, "Current array parsed after fetch")
+    field(SCAN, "Passive")
+    field(NELM, "$(DATA_SIZE)")
+    field(FTVL, "FLOAT")
+}
+
+record(aao, "$(P)$(R)TIME_ARRAY") {
+    field(DESC, "Time array parsed after fetch")
+    field(SCAN, "Passive")
+    field(NELM, "$(DATA_SIZE)")
+    field(FTVL, "FLOAT")
 }

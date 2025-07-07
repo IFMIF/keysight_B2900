@@ -3,12 +3,7 @@ TOP = .
 include $(TOP)/configure/CONFIG
 
 # Directories to build, any order
-DIRS += configure
-DIRS += $(wildcard *Sup)
-DIRS += $(wildcard *App)
-DIRS += $(wildcard *Top)
-DIRS += $(wildcard iocBoot)
+DIRS += configure src testApp
 
 # Add any additional dependency rules here:
-
 include $(TOP)/configure/RULES_TOP
